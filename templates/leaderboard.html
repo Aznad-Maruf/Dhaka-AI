@@ -1,0 +1,47 @@
+<html>
+    <head>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <title>Leaderboard</title>
+    </head>
+    <body>
+    <section class="hero is-info is-fullheight">
+
+        <center><h1><b>Leaderboard</b></h1><br/> </center>
+    <div class="hero-body">
+                                <table><tr>
+                                  <th>Position</th>
+                                  <th>Team</th>
+                                  <th>Accuracy</th>
+                                </tr> <br/>
+                                {% for r in result %}
+                                <tr>
+                                  <td>{{ r[0] }}</td>
+                                  <td>{{ r[1] }}</td>
+                                  <td>{{ r[2] }}</td>
+                                </tr>
+                                    {% endfor %}
+                                </table>
+        </div>
+    </section>
+    </body>
+</html>
